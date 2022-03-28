@@ -17,7 +17,7 @@ jobs:
               "icon": ":js:",
               "project": "NODE Wrapper",
               "version": "${{ github.event.release.tag_name }}",
-              "changes": "${{ github.event.release.description }}"
+              "changes": "${{ github.event.release.body }}"
             }
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
