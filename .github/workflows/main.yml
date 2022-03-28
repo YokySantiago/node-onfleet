@@ -25,9 +25,10 @@ jobs:
           # JSON payload to send to Slack if webhook route. If not supplied, json from GitHub event will be sent instead
           payload: |
             {
+              "icon": ":js:",
               "project": "NODE Wrapper",
-              "version": "1.1",
-              "changes": "Message"
+              "version": "${{ github.event.release.tag_name }}",
+              "changes": "${{ github.event.release.description }}"
             }
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
