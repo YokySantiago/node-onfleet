@@ -24,7 +24,7 @@ jobs:
                     "type": "section",
                     "text": {
                       "type": "mrkdwn",
-                      "text": "${{ fromJSON(github.event.release.body) }}"
+                      “text”: “${{ format(‘{0}’, github.event.release.body) }}”
                     }
                   }
                 ]
