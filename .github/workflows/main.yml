@@ -25,9 +25,16 @@ jobs:
                     "type": "button",
                     "text": {
                       "type": "plain_text",
-                      "text": "Details"
+                      "text": "See details"
                     },
                     "url": "${{ github.event.release.html_url }}"
+                  }
+                },
+                {
+                  "type": "section",
+                  "text": {
+                    "type": "mrkdwn",
+                    "text": "*Changes:*\n ${{ toJSON(github.event.release).body }}"
                   }
                 }
               ]
