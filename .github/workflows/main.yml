@@ -14,20 +14,22 @@ jobs:
         with:
           payload: |
             {
-              "icon": ":js:",
-              "project": "NODE Wrapper",
-              "version": "${{ github.event.release.tag_name }}",
-              "changes": [
-                "text": "Santi!: ${{ job.status }}\n${{ github.event.pull_request.html_url || github.event.head_commit.url }}",
-                "blocks": [
-                  {
-                    "type": "section",
+              "blocks": [
+                {
+                  "type": "section",
+                  "text": {
+                    "type": "mrkdwn",
+                    “text”: “:js: A new version of NODE Wrapper has been released: ${{ github.event.release.tag_name }}”
+                  },
+                  "accessory": {
+                    "type": "button",
                     "text": {
-                      "type": "mrkdwn",
-                      “text”: “${{ format(‘{0}’, github.event.release.body) }}”
-                    }
+                      "type": "plain_text",
+                      "text": "Details"
+                    },
+                    "url": "${{ github.event.release.html_url }}"
                   }
-                ]
+                }
               ]
             }
         env:
