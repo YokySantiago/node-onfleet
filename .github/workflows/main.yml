@@ -34,7 +34,7 @@ jobs:
                   "type": "section",
                   "text": {
                     "type": "mrkdwn",
-                    "text": "*Changes:*\n ${{ toJSON(github.event.release) }}"
+                    "text": "*Changes:*\n ${{ toJSON(github.event.release).body }}"
                   }
                 }
               ]
