@@ -29,13 +29,6 @@ jobs:
                     },
                     "url": "${{ github.event.release.html_url }}"
                   }
-                },
-                {
-                  "type": "section",
-                  "text": {
-                    "type": "mrkdwn",
-                    "text": "*Changes:*\n ${{ toJSON(github.event.release).body }}"
-                  }
                 }
               ]
             }
